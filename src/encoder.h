@@ -1,3 +1,5 @@
+#pragma once
+
 #include <Arduino.h>   // required before wiring_private.h
 
 #ifndef SERIAL_DEBUG
@@ -9,10 +11,10 @@
 // This could be dangerous...
 
 // Global Variables
-volatile int32_t _encoder_pulses = 0;
-volatile bool _state_encoderA , _state_encoderB;
+extern volatile int32_t _encoder_pulses;
+extern volatile bool _state_encoderA, _state_encoderB;
     
-int _pinA, _pinB;
+extern int _pinA, _pinB;
     
 // Global Functions
 void ISR_encoderA();

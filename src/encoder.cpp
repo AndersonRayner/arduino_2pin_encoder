@@ -1,5 +1,10 @@
 #include "encoder.h"
 
+volatile int32_t _encoder_pulses = 0;
+volatile bool _state_encoderA , _state_encoderB;
+    
+int _pinA, _pinB;
+
 ENCODER::ENCODER(int pinA, int pinB) :
   _pinA_set(pinA),
   _pinB_set(pinB)
@@ -9,7 +14,7 @@ ENCODER::ENCODER(int pinA, int pinB) :
   
 void ENCODER::init(void)
 {
-    // Set all the encoder pins and varialbles properly
+    // Set all the encoder pins and variables properly
     _pinA = _pinA_set;
     _pinB = _pinB_set;
     _encoder_pulses = 0;
