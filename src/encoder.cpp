@@ -20,8 +20,8 @@ void ENCODER::init(void)
     _encoder_pulses = 0;
     
     // Software pullups not required as all done in hardware
-    pinMode(_pinA,INPUT); _state_encoderA = digitalRead(_pinA);
-    pinMode(_pinB,INPUT); _state_encoderB = digitalRead(_pinB);
+    pinMode(_pinA,INPUT_PULLUP); _state_encoderA = digitalRead(_pinA);
+    pinMode(_pinB,INPUT_PULLUP); _state_encoderB = digitalRead(_pinB);
 
     // Attach interrupts to the encoders
     attachInterrupt(digitalPinToInterrupt(_pinA),ISR_encoderA  ,CHANGE);
