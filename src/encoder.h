@@ -32,6 +32,7 @@ class ENCODER {
     
     void set_pulses_per_turn(uint32_t encoder_pulses_per_rev);
     bool enabled();
+    bool zero_known() { return (_zero_known); }
     
     uint8_t _debug = 0;
     
